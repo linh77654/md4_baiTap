@@ -23,7 +23,7 @@ public class DictionnaryController {
 
         return "dictionary";
     }
-
+    
     @GetMapping("/translate")
     public String translate(@RequestParam String word, Model model) {
         String translation = dictionary.get(word.toLowerCase());
