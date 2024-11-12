@@ -1,4 +1,4 @@
-package com.example.caculator;
+package com.example.caculator.controller;
 
 
 import org.springframework.stereotype.Controller;

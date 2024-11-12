@@ -5,40 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ab76e9d-4264-401d-967b-694577ea5141" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/caculator/CalculatorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Sandwich/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Sandwich/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Sandwich/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Sandwich/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Sandwich/src/main/java/com/example/sandwich/controller/SandwichController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Sandwich/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Sandwich/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Sandwich/src/main/webapp/WEB-INF/views/result.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Sandwich/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Student/src/main/java/com/example/student/controller/StudentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Student/src/main/java/com/example/student/model/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Student/src/main/java/com/example/student/repository/IStudentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Student/src/main/java/com/example/student/repository/StudentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Student/src/main/java/com/example/student/service/IStudentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Student/src/main/java/com/example/student/service/StudentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Student/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Student/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Student/src/main/webapp/WEB-INF/views/student/list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Student/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../email/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../email/src/main/java/com/example/email/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../email/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../email/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../email/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../email/src/main/webapp/views/success.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tiente/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../tiente/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tiente/src/main/java/com/example/tiente/HelloServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tudien/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../tudien/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tudien/src/main/java/com/example/tudien/HelloServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tudien/src/main/java/com/example/tudien/controller/DictionnaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tudien/src/main/java/com/example/tudien/controller/DictionnaryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../electronic_box/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../electronic_box/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../electronic_box/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../electronic_box/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../electronic_box/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../electronic_box/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../electronic_box/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/caculator/CalculatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/caculator/controller/CalculatorController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,9 +37,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2ojHnn6mGxMqWkzYtGScBxMLPk8" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -74,6 +51,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/m4/Caculator/src/main/webapp/WEB-INF",
@@ -130,6 +108,8 @@
       <option name="presentableId" value="Default" />
       <updated>1731376234249</updated>
       <workItem from="1731376235279" duration="351000" />
+      <workItem from="1731377828540" duration="72000" />
+      <workItem from="1731378371806" duration="1040000" />
     </task>
     <servers />
   </component>
