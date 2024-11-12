@@ -6,7 +6,7 @@
     <title>Email Settings</title>
 </head>
 <body>
-<form:form modelAttribute="email" action="${pageContext.request.contextPath}/email/emailList" method="post">
+<form:form modelAttribute="email" action="/email/emailList" method="post">
     <table>
         <tr>
             <td>Language</td>
@@ -41,7 +41,7 @@
         </tr>
         <tr>
             <td><input type="submit" value="Update"/></td>
-            <td><form:button onclick="location.href='${pageContext.request.contextPath}/email/emailList'">Cancel</form:button></td>
+            <td><form:button onclick="location.href='/email/emailList'">Cancel</form:button></td>
         </tr>
     </table>
 </form:form>

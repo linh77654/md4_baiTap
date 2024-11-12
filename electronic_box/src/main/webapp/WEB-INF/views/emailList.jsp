@@ -19,14 +19,13 @@
       <th>Spam Filter</th>
       <th>Signature</th>
     </tr>
-    <c:forEach var="emails" items="${emailList}">
+
       <tr>
-        <td>${emails.language}</td>
-        <td>${emails.pageSize}</td>
-        <td>${emails.spamFilter ? 'Enabled' : 'Disabled'}</td>
-        <td>${emails.signature}</td>
+        <td>${email.language}</td>
+        <td>${email.pageSize}</td>
+        <td>${email.spamFilter ? 'Enabled' : 'Disabled'}</td>
+        <td>${email.signature}</td>
       </tr>
-    </c:forEach>
   </table>
   </body>
 </html>

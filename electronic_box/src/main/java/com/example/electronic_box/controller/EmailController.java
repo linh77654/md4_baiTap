@@ -18,18 +18,11 @@ public class EmailController {
 
     @Autowired
     private EmailService emailService;
-
-    @GetMapping("/emailList")
-    public String emailList(Model model) {
-        Email email = new Email();
-        model.addAttribute("email", email);
-        return "emailList";
-    }
-
-
+    
     @PostMapping("/emailList")
-    public String emailSave(@ModelAttribute("email") Email email) {
+    public String emailSave(@ModelAttribute("email") Email email, Model model) {
         emailService.save(email);
+        model.addAttribute("email", email);
         return "emailList";
     }
 
@@ -38,6 +31,4 @@ public class EmailController {
         List<Email> emailList = emailService.getAllEmails();
         return "emailForm";
     }
-
-
 }
