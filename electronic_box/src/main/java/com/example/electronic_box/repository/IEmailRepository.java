@@ -1,7 +1,13 @@
 package com.example.electronic_box.repository;
 
+
 import com.example.electronic_box.model.Email;
 
+import java.util.List;
+
 public interface IEmailRepository {
-    boolean save(Email email);
+
+    List<Email> getAllemail();
+
+    void save(Email emails);
 }

@@ -1,9 +1,7 @@
 package com.example.electronic_box.controller;
 
-
 import com.example.electronic_box.model.Email;
-
-import com.example.electronic_box.service.IEmailService;
+import com.example.electronic_box.service.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,32 +9,35 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.List;
 
 @Controller
-@RequestMapping("email")
+@RequestMapping("/email")
 public class EmailController {
 
     @Autowired
-    private IEmailService emailService;
+    private EmailService emailService;
 
-    @GetMapping("")
+    @GetMapping("/emailList")
     public String emailList(Model model) {
         Email email = new Email();
-        model.addAttribute("emailList", email);
-        String[] language = new String[]{"Vietnamese", "English", "Germany", "Australia"};
-        model.addAttribute("language", language);
-        int[] size = new int[]{5, 10, 15, 25, 50, 100};
-        model.addAttribute("size", size);
-        return "home";
+        model.addAttribute("email", email);
+        return "emailList";
     }
 
-    @PostMapping("")
-    public String save(@ModelAttribute Email email, Model model, RedirectAttributes redirectAttributes) {
 
-        String email1 = String.valueOf(emailService.save(email));;
-        model.addAttribute("emailList", email1);
-        redirectAttributes.addFlashAttribute("message", "thêm mới thành công");
-        return "home";
+    @PostMapping("/emailList")
+    public String emailSave(@ModelAttribute("email") Email email) {
+        emailService.save(email);
+        return "emailList";
     }
+
+    @GetMapping("")
+    public String emailForm(@ModelAttribute("email") Email email) {
+        List<Email> emailList = emailService.getAllEmails();
+        return "emailForm";
+    }
+
+
 }

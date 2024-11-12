@@ -6,13 +6,17 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Repository
 public class EmailRepository implements IEmailRepository {
-    private static List<Email> emails = new ArrayList<Email>();
+    private static List<Email> emails = new ArrayList<>();
 
     @Override
-    public boolean save(Email email) {
-        return emails.add(email);
+    public List<Email> getAllemail() {
+        return new ArrayList<>(emails);
+    }
+
+    @Override
+    public void save(Email email) {
+        emails.add(email);
     }
 }

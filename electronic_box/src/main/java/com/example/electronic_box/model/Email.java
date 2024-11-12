@@ -2,17 +2,12 @@ package com.example.electronic_box.model;
 
 public class Email {
     private String language;
-    private int pageSize;
-    private boolean spamsFilter;
+    private Integer pageSize;
+    private Boolean spamFilter;
     private String signature;
 
-    public Email() {}
+    public void Settings() {
 
-    public Email(String language, int pageSize, boolean spamsFilter, String signature) {
-        this.language = language;
-        this.pageSize = pageSize;
-        this.spamsFilter = spamsFilter;
-        this.signature = signature;
     }
 
     public String getLanguage() {
@@ -23,20 +18,20 @@ public class Email {
         this.language = language;
     }
 
-    public int getPageSize() {
+    public Integer getPageSize() {
         return pageSize;
     }
 
-    public void setPageSize(int pageSize) {
+    public void setPageSize(Integer pageSize) {
         this.pageSize = pageSize;
     }
 
-    public boolean isSpamsFilter() {
-        return spamsFilter;
+    public Boolean getSpamFilter() {
+        return spamFilter;
     }
 
-    public void setSpamsFilter(boolean spamsFilter) {
-        this.spamsFilter = spamsFilter;
+    public void setSpamFilter(Boolean spamFilter) {
+        this.spamFilter = spamFilter;
     }
 
     public String getSignature() {
@@ -47,4 +42,11 @@ public class Email {
         this.signature = signature;
     }
 
+    public void Settings(String language, Integer pageSize, Boolean spamFilter, String signature) {
+        this.language = language;
+        this.pageSize = pageSize;
+        this.spamFilter = spamFilter;
+        this.signature = signature;
+
+    }
 }

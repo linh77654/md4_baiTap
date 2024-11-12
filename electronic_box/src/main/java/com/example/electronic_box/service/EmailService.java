@@ -5,6 +5,8 @@ import com.example.electronic_box.repository.IEmailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class EmailService implements IEmailService {
@@ -13,7 +15,12 @@ public class EmailService implements IEmailService {
     private IEmailRepository emailRepository;
 
     @Override
-    public boolean save(Email email) {
-        return emailRepository.save(email);
+    public List<Email> getAllEmails() {
+        return emailRepository.getAllemail();
+    }
+
+    @Override
+    public void save(Email emails) {
+        emailRepository.save(emails);
     }
 }
