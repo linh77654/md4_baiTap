@@ -11,7 +11,7 @@ repositories {
 }
 
 ext {
-    junitVersion = '5.10.2'
+    junitVersion = '5.9.2'
 }
 
 sourceCompatibility = '1.8'
@@ -31,13 +31,14 @@ dependencies {
     // https://mvnrepository.com/artifact/nz.net.ultraq.thymeleaf/thymeleaf-layout-dialect
     implementation group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '3.1.0'
 
-
-    compileOnly('javax.servlet:javax.servlet-api:4.0.1')
+    //    hibernate
+    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.4.3.Final'
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
+    implementation group: 'org.springframework.data', name: 'spring-data-jpa', version: '2.7.0'
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }
 
 test {
-    useJUnitPlatform()
-}
+    useJUnitPlatform()}
