@@ -1,4 +1,5 @@
 package com.example.spingboot.controller;
+
 import com.example.spingboot.model.Blog;
 import com.example.spingboot.model.Category;
 import com.example.spingboot.service.BlogService;
@@ -20,16 +21,28 @@ import java.util.List;
 
 @Controller
 public class BlogController {
+
     @Autowired
     private BlogService blogService;
 
     @Autowired
     private CategoryService categoryService;
 
-
-    @ModelAttribute
-    public List<Category> categorylist() {
+    @ModelAttribute("categoryss")
+    public List<Category> category() {
         return categoryService.findAll();
+    }
+
+    @GetMapping("")
+    public String index(@RequestParam(defaultValue = "0") int page,
+                        @RequestParam(defaultValue = "") String searchName,
+                        Model model) {
+        Sort sort = Sort.by(Sort.Direction.DESC, "title");
+        Pageable pageable = PageRequest.of(page, 2, sort);
+        Page<Blog> blogPage = blogService.findBlogByTitleContaining(searchName, pageable);
+        model.addAttribute("blogPage", blogPage);
+        model.addAttribute("searchName", searchName);
+        return "blog";
     }
 
     @GetMapping("/create")
@@ -44,12 +57,14 @@ public class BlogController {
     public String save(@ModelAttribute Blog blog, RedirectAttributes redirectAttributes) {
         System.out.println(blog);
         blogService.save(blog);
-        redirectAttributes.addFlashAttribute("success" , true);
+        redirectAttributes.addFlashAttribute("success", true);
         return "redirect:/";
     }
 
     @PostMapping("/delete")
-    public String delete(@ModelAttribute Blog blog, RedirectAttributes redirectAttributes) {
+    public String delete(@RequestParam("blogId") long blogId, RedirectAttributes redirectAttributes) {
+        blogService.delete(blogId);
+        redirectAttributes.addFlashAttribute("success", true);
         return "redirect:/";
     }
 
@@ -71,11 +86,10 @@ public class BlogController {
     public String update(@ModelAttribute("blog") Blog blog, RedirectAttributes redirectAttributes) {
         blogService.save(blog);
         redirectAttributes.addFlashAttribute("success", true);
-
         return "redirect:/";
     }
-
 }
+
 //    @GetMapping("")
 //    public String index(Model model) {
 //        List<Blog> blogs = blogService.findAll();
