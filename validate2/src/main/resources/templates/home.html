@@ -53,18 +53,18 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="song,loop:${listSong}">
+    <tr th:each="music,loop:${listSong}">
       <td th:text="${loop.count}" class="t"></td>
 
-      <td th:text="${song.getNameSong()}" class="t"></td>
-      <td th:text="${song.getArtist()}" class="t"></td>
-      <td th:text="${song.getAlbum()}" class="t"></td>
+      <td th:text="${music.getNameSong()}" class="t"></td>
+      <td th:text="${music.getArtist()}" class="t"></td>
+      <td th:text="${music.getAlbum()}" class="t"></td>
       <td class="t">
-        <a th:href="@{/edit(id=${song.getId()})}">
+        <a th:href="@{/edit(id=${music.getId()})}">
           <button class="btn btn-warning">Edit</button>
         </a>
         <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete"
-                th:data-id="${song.getId()}">Delete
+                th:data-id="${music.getId()}">Delete
         </button>
       </td>
     </tr>

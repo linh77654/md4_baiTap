@@ -1,7 +1,7 @@
 package com.example.validate2.controller;
 
 import com.example.validate2.dto.MusicDto;
-import com.example.validate2.model.Song;
+import com.example.validate2.model.Music;
 import com.example.validate2.service.IMusicService;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
@@ -23,42 +23,42 @@ public class MusicController {
     IMusicService songService;
     @GetMapping("")
     public String index(Model model) {
-        List<Song> list = songService.findAll(); ;
+        List<Music> list = songService.findAll(); ;
         model.addAttribute("listSong", list);
         return "home";
     }
     @GetMapping("/create")
     public String create(Model model) {
-        model.addAttribute("songDto", new MusicDto());
+        model.addAttribute("musicDto", new MusicDto());
         return "add";
     }
     @PostMapping("/add")
-    public String add(@Valid @ModelAttribute("songDto") MusicDto musicDto, BindingResult bindingResult) {
+    public String add(@Valid @ModelAttribute("musicDto") MusicDto musicDto, BindingResult bindingResult) {
         new MusicDto().validate(musicDto, bindingResult);
         if (bindingResult.hasErrors()) {
 
             return "add";
         }
-        Song song = new Song();
-        BeanUtils.copyProperties(musicDto, song);
-        songService.save(song);
+        Music music = new Music();
+        BeanUtils.copyProperties(musicDto, music);
+        songService.save(music);
         return "redirect:/";
 
     }
     @GetMapping("/edit")
     public String edit(@RequestParam("id") Long songId, Model model) {
-        Song song = songService.findById(songId);
-        model.addAttribute("song", song);
+        Music music = songService.findById(songId);
+        model.addAttribute("music", music);
         return "edit";}
     @PostMapping("/save")
-    public String save(@Valid @ModelAttribute("song") MusicDto musicDto, BindingResult bindingResult) {
+    public String save(@Valid @ModelAttribute("music") MusicDto musicDto, BindingResult bindingResult) {
         new MusicDto().validate(musicDto, bindingResult);
         if (bindingResult.hasErrors()) {
             return "edit";
         }
-        Song song = new Song();
-        BeanUtils.copyProperties(musicDto, song);
-        songService.save(song);
+        Music music = new Music();
+        BeanUtils.copyProperties(musicDto, music);
+        songService.save(music);
         return "redirect:/";
     }
     @PostMapping("/delete")

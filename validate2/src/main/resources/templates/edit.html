@@ -24,7 +24,7 @@
 
 </div>
 <div class="container formAdd">
-    <form  th:action="@{/save}" th:object="${song}" method="post">
+    <form  th:action="@{/save}" th:object="${music}" method="post">
         <input type="hidden" th:field="*{id}">
         <div class="mb-3">
             <label for="name" class="form-label">Title</label>

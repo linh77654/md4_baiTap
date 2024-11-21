@@ -1,12 +1,12 @@
 package com.example.validate2.service;
 
-import com.example.validate2.model.Song;
+import com.example.validate2.model.Music;
 
 import java.util.List;
 
 public interface IMusicService {
-    List<Song> findAll();
-    Song findById(Long id);
-    void save(Song student);
+    List<Music> findAll();
+    Music findById(Long id);
+    void save(Music student);
     void delete(Long id);
 }

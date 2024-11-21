@@ -1,6 +1,6 @@
 package com.example.validate2.service;
 
-import com.example.validate2.model.Song;
+import com.example.validate2.model.Music;
 import com.example.validate2.repository.IMusicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,17 +13,17 @@ public class MusicService implements IMusicService {
     IMusicRepository songRepository;
 
     @Override
-    public List<Song> findAll() {
+    public List<Music> findAll() {
         return songRepository.findAll();
     }
 
     @Override
-    public Song findById(Long id) {
+    public Music findById(Long id) {
         return songRepository.findById(id).get();
     }
 
     @Override
-    public void save(Song student) {
+    public void save(Music student) {
         songRepository.save(student);
     }
 
