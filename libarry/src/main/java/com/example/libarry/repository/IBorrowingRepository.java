@@ -5,10 +5,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
+@Repository
+public interface IBorrowingRepository  extends JpaRepository<Borrowing, Long> {
 
-public interface IBorrowingRepository {
-    @Repository
-    public interface BorrowingRepository extends JpaRepository<Borrowing, Long> {
-        Optional<Borrowing> findByBorrowId(String borrowId);
-    }
+
+    Optional<Object> findByBorrowId(String borrowId);
 }

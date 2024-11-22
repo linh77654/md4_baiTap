@@ -1,7 +1,9 @@
-package com.example.product.service;
+package com.example.cart.service;
 
-import com.example.product.model.Products;
-import com.example.product.repository.IProductRepository;
+;
+import com.example.cart.model.Products;
+import com.example.cart.repository.IProductRepository;
+import com.example.cart.service.IProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

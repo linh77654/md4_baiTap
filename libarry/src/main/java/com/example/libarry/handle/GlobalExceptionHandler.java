@@ -17,4 +17,4 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(InvalidBorrowingIdException.class)
     public String handleInvalidBorrowingIdException(InvalidBorrowingIdException ex, Model model)
-    { model.addAttribute("errorMessage", ex.getMessage()); return "templates/book/error/invalid-borrow-id"; } }
+    { model.addAttribute("errorMessage", ex.getMessage()); return "templates/invalid-borrow-id"; } }
