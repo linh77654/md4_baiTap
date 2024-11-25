@@ -4,86 +4,49 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Cart {
-    private Map<Products, Integer> products = new HashMap<Products, Integer>();
+    private Map<Product, Integer> products = new HashMap<>();
 
     public Cart() {
     }
 
-    public Map<Products, Integer> getProducts() {
+    public Cart(Map<Product, Integer> product) {
+        this.products = product;
+    }
+
+    public Map<Product, Integer> getProducts() {
         return products;
     }
 
-    public void setProducts(Map<Products, Integer> products) {
-        this.products = products;
-    }
 
-    private boolean checkItemCart(Products p) {
-        for (Map.Entry<Products, Integer> entry : products.entrySet()) {
-            if (entry.getKey().getId().equals(p.getId())) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private Map.Entry<Products, Integer> selectItemInCart(Products p) {
-        for (Map.Entry<Products, Integer> entry : products.entrySet()) {
-            if (entry.getKey().getId().equals(p.getId())) {
-                return entry;
-            }
-        }
-        return null;
-    }
-
-    public void addProduct(Products p) {
-        if (!checkItemCart(p)) {
-            products.put(p, 1);
+    public void addCart(Product product) {
+        if (products.containsKey(product)) {
+            Integer currentQuantity = products.get(product);
+            products.put(product, currentQuantity + 1);
         } else {
-            Map.Entry<Products, Integer> entry = selectItemInCart(p);
-            Integer newQuantity = entry.getValue() + 1;
-            products.replace(entry.getKey(), newQuantity);
+            products.put(product, 1);
         }
+
     }
 
-    public void reduceQuantity(Products p) {
-        Map.Entry<Products, Integer> entry = selectItemInCart(p);
-        Integer quantity = entry.getValue() ;
-        if (quantity > 1) {
-            quantity = quantity - 1;
-            products.replace(entry.getKey(), quantity);
-        }else {
-            products.remove(p);
-        }
-    }
-
-    public Integer countItemQuantity() {
-        return products.size();
-    }
-
-    public Integer countProductQuantity() {
+    public Integer countProductQuantity(){
         Integer productQuantity = 0;
-        for (Map.Entry<Products, Integer> entry : products.entrySet()) {
+        for (Map.Entry<Product, Integer> entry : products.entrySet()) {
             productQuantity += entry.getValue();
         }
         return productQuantity;
     }
 
-    public Float countTotalPayment() {
-        float totalPayment = 0;
-        for (Map.Entry<Products, Integer> entry : products.entrySet()) {
-            totalPayment += (float) (entry.getKey().getPrice() * (float) entry.getValue());
-        }
-        return totalPayment;
+    public Integer countItemQuantity(){
+        return products.size();
     }
 
-    public void removeProduct(Products product) {
-        if (products.containsKey(product)) {
-            products.remove(product);
+    public Float countTotalPayment(){
+        float payment = 0;
+        for (Map.Entry<Product, Integer> entry : products.entrySet()) {
+            payment += entry.getKey().getPrice() * (float) entry.getValue();
         }
+        return payment;
+    }
 
-    }
-    public void clearCart() {
-        products.clear();
-    }
 
 }
